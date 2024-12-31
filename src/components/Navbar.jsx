@@ -19,12 +19,12 @@ const Navbar = () => {
   };
 
   const handleLinkClick = () => {
-    setOpen(false); 
+    setOpen(false);
   };
 
   return (
     <AppBar
-      position="absolute"
+      position="fixed"
       sx={{ backgroundColor: "transparent", boxShadow: "none" }}
     >
       <Toolbar
@@ -32,6 +32,10 @@ const Navbar = () => {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
+          background: "rgba(148, 147, 147, 0.5)",
+          backgroundSize: "cover",
+
+          backgroundPosition: "center",
         }}
       >
         <Box sx={{ display: "flex", alignItems: "center" }}>
