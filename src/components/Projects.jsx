@@ -15,10 +15,9 @@ const Projects = () => {
   const [currentProject, setCurrentProject] = useState(0);
   const theme = useTheme();
 
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm")); // Screen size: small (xs)
-  const isMediumScreen = useMediaQuery(theme.breakpoints.between("sm", "md")); // Screen size: medium (sm - md)
-  const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg")); // Screen size: large (lg+)
-
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const isMediumScreen = useMediaQuery(theme.breakpoints.between("sm", "md")); 
+  const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
   const handleNext = () => {
     setCurrentProject((prev) => (prev + 1) % projectsData.length);
   };
@@ -29,11 +28,10 @@ const Projects = () => {
     );
   };
 
-  // Determine how many items should be shown based on screen size
   const getGridItemWidth = () => {
-    if (isSmallScreen) return 100; // 100% width for small screens
-    if (isMediumScreen) return 50; // 50% width for medium screens (2 items per row)
-    if (isLargeScreen) return 25; // 25% width for large screens (4 items per row)
+    if (isSmallScreen) return 100; 
+    if (isMediumScreen) return 50; 
+    if (isLargeScreen) return 25; 
     return 100;
   };
 
@@ -68,7 +66,6 @@ const Projects = () => {
         Crafting spaces, Building legacies - Explore Our Portfolio
       </Typography>
 
-      {/* Arrow Navigation */}
       <Box sx={{ display: "flex", justifyContent: "flex-end", mb: 4 }}>
         <IconButton onClick={handlePrevious} aria-label="Previous Project">
           <ChevronLeftIcon />
@@ -77,8 +74,6 @@ const Projects = () => {
           <ChevronRightIcon />
         </IconButton>
       </Box>
-
-      {/* Project Slider */}
       <Box sx={{ overflow: "hidden" }}>
         <Box
           sx={{
@@ -91,8 +86,8 @@ const Projects = () => {
             <Box
               key={index}
               sx={{
-                width: `${slideWidth}%`, // Adjust width for each screen size
-                flexShrink: 0, // Prevent items from shrinking
+                width: `${slideWidth}%`, 
+                flexShrink: 0, 
                 paddingRight: "16px",
               }}
             >
