@@ -14,14 +14,12 @@ import { Link as ScrollLink } from "react-scroll";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
-  // Toggle Drawer visibility
   const toggleDrawer = (openState) => () => {
     setOpen(openState);
   };
 
-  // Close drawer after clicking a link
   const handleLinkClick = () => {
-    setOpen(false); // Close the drawer
+    setOpen(false); 
   };
 
   return (
@@ -36,7 +34,6 @@ const Navbar = () => {
           alignItems: "center",
         }}
       >
-        {/* Logo */}
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <img
             src={assets.logo}
@@ -45,7 +42,6 @@ const Navbar = () => {
           />
         </Box>
 
-        {/* Hamburger Icon for Small Screens */}
         <Box sx={{ display: { xs: "block", md: "none" } }}>
           <IconButton
             edge="end"
@@ -57,7 +53,6 @@ const Navbar = () => {
           </IconButton>
         </Box>
 
-        {/* Navigation Links for Large Screens */}
         <Box sx={{ display: { xs: "none", md: "flex" }, gap: 3 }}>
           <ScrollLink
             to="Header"
@@ -97,7 +92,6 @@ const Navbar = () => {
           </ScrollLink>
         </Box>
 
-        {/* Signup Button for Large Screens */}
         <Button
           variant="contained"
           sx={{
@@ -112,7 +106,6 @@ const Navbar = () => {
         </Button>
       </Toolbar>
 
-      {/* Drawer for Small Screens */}
       <Drawer anchor="right" open={open} onClose={toggleDrawer(false)}>
         <Box
           sx={{
