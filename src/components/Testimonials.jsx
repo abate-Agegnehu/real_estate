@@ -2,9 +2,28 @@ import React from "react";
 import { assets, testimonialsData } from "../assets/assets";
 import { Box, Typography, Grid, Avatar, Rating, Paper } from "@mui/material";
 
+import { motion } from "framer-motion";
+
 const Testimonials = () => {
   return (
-    <Box id="Testimonials" sx={{ py: 10, px: { xs: 3, lg: 8 }, width: "100%" }}>
+    <motion.div
+      initial={{ opacity: 0, x: 100 }}
+      transition={{
+        duration: 1,
+      }}
+      whileInView={{
+        opacity: 1,
+        x: 0,
+      }}
+      viewport={{ once: true }}
+      id="Testimonials"
+      style={{
+        textAlign: "center",
+        padding: "80px 6px",
+        width: "100%",
+        overflow: "hidden",
+      }}
+    >
       <Typography
         variant="h3"
         align="center"
@@ -73,7 +92,7 @@ const Testimonials = () => {
           </Grid>
         ))}
       </Grid>
-    </Box>
+    </motion.div>
   );
 };
 

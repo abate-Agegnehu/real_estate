@@ -1,20 +1,32 @@
 import React from "react";
 import { assets } from "../assets/assets";
 import { Box, Typography, Grid, Paper, Button } from "@mui/material";
+import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <Box
+    <motion.div
+      initial={{ opacity: 0, x: 100 }}
+      transition={{
+        duration: 1,
+      }}
+      whileInView={{
+        opacity: 1,
+        x: 0,
+      }}
+      viewport={{ once: true }}
       id="About"
-      sx={{
+    
+      style={{
         display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: { xs: 4, md: 5, lg: 8 },
+        textAlign: "center",
+        padding: "80px 6px",
+        flexDirection:"column",
+        justifyContent:"center",
         width: "100%",
         overflow: "hidden",
       }}
+      
     >
       <Typography
         variant="h3"
@@ -38,12 +50,9 @@ const About = () => {
       </Typography>
       <Typography
         variant="body1"
-        sx={{
-          color: "gray",
-          maxWidth: "640px",
-          textAlign: "center",
-          marginBottom: 4,
-        }}
+        align="center"
+        color="textSecondary"
+        sx={{ mb: 6, maxWidth: "80%", mx: "auto" }}
       >
         Passionate about properties, Dedicated to your visions
       </Typography>
@@ -125,7 +134,7 @@ const About = () => {
             sx={{
               marginBottom: 2,
               color: "text.secondary",
-              marginTop:"20px",
+              marginTop: "20px",
               maxWidth: 600,
             }}
           >
@@ -147,7 +156,7 @@ const About = () => {
           </Button>
         </Grid>
       </Grid>
-    </Box>
+    </motion.div>
   );
 };
 

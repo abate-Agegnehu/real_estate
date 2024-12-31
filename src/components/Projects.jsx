@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { assets, projectsData } from "../assets/assets";
+import { motion } from "framer-motion";
+
 import {
   Box,
   Typography,
@@ -38,7 +40,16 @@ const Projects = () => {
   const slideWidth = getGridItemWidth();
 
   return (
-    <Box sx={{ py: 4, px: { xs: 3, md: 6 }, my: 8 }} id="Projects">
+    <motion.div
+          initial={{ opacity: 0, x: -200 }}
+          transition={{
+            duration: 1,
+          }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+          }}
+          viewport={{ once: true }} sx={{ py: 4, px: { xs: 3, md: 6 }, my: 8 }} id="Projects">
       <Typography
         variant="h3"
         align="center"
@@ -130,7 +141,7 @@ const Projects = () => {
           ))}
         </Box>
       </Box>
-    </Box>
+    </motion.div>
   );
 };
 
